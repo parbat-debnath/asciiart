@@ -1,0 +1,143 @@
+*{ 
+    margin : 0px;
+    padding: 0px;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* theme */
+
+:root {
+    --bg-color : white;
+    --text-color : black;
+    --border-color : black;
+    --soft-light-color : #ebebeb;
+    --light-text-color : rgb(100, 100, 100);
+}
+
+.dark {
+    --bg-color : #212121;
+    --text-color : white;
+    --border-color : white;
+    --soft-light-color : #4e4e4e;
+    --light-text-color : rgb(109, 109, 109);
+}
+
+/* header */
+
+header {
+    padding: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+header h1 {
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 800;
+}
+
+/* action btns */
+.header-action-btns {
+    display: flex;
+    align-items: center;
+}
+.header-action-btns svg{
+    margin-left: 20px;
+}
+
+/* message */
+
+#message {
+    width: 100%;
+    padding: 5vw;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+/* image upload button */
+
+.image-upload-btn-holder {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    margin-bottom: 5vw;
+}
+
+.image-upload-btn-holder #imageUploadBtn {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px dashed var(--border-color);
+    color: var(--text-color);
+}
+.image-upload-btn-holder #imageUploadBtn p {
+    margin-left: 10px;
+}
+
+/* image holder */
+
+.image-holder {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.image-holder img {
+    height: 200px;
+    border: 1px solid var(--soft-light-color);
+}
+
+/* action buttons */
+
+.action-btns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    
+}
+.action-btns div {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: var(--soft-light-color);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.action-btns div svg {
+    margin-right: 5px;
+}
+
+/* footer */
+
+footer {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    bottom: 0px;
+    margin-top: 100px;
+}
+
+footer p{
+    font-size: 12px;
+    color: var(--light-text-color);
+}
+footer p a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+}
+footer p a:visited{
+    color: var(--text-color);
+}
