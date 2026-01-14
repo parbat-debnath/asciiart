@@ -2,11 +2,17 @@
     margin : 0px;
     padding: 0px;
 }
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    min-height: 80vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* theme */
@@ -156,13 +162,13 @@ nav .nav-element a:hover,  nav .nav-element a:hover{
 /* footer */
 
 footer {
-    position: absolute;
+    position: static;
     width: 100%;
     padding: 20px;
     text-align: center;
     box-sizing: border-box;
     background-color: var(--bg-color);
-    bottom: 0px;
+    margin-top: auto;
 }
 
 footer p{
