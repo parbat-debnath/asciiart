@@ -6,12 +6,15 @@ body {
     font-family: "Roboto", sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+    min-height: 80vh;
 }
 
 /* theme */
 
 :root {
     --bg-color : white;
+    --light-bg-color : rgb(242, 242, 242);
+    --dark-bg-color : #bcbcbc;
     --text-color : black;
     --border-color : black;
     --soft-light-color : #ebebeb;
@@ -20,6 +23,8 @@ body {
 
 .dark {
     --bg-color : #212121;
+    --light-bg-color : #333333;
+    --dark-bg-color : #0e0e0e;
     --text-color : white;
     --border-color : white;
     --soft-light-color : #4e4e4e;
@@ -49,6 +54,37 @@ header h1 {
 .header-action-btns svg{
     margin-left: 20px;
 }
+
+/* navbar */
+
+nav {
+    position: fixed;
+    width: 70%;
+    box-sizing: border-box;
+    background-color: var(--light-bg-color);
+    height: 100dvh;
+    z-index: 1;
+    top: 0px;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+    box-shadow: 5px 0 10px var(--dark-bg-color);
+    display: none;
+}
+nav .nav-element {
+    padding: 10px;
+}
+nav .nav-element a{
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.1s;
+    -webkit-tap-highlight-color: transparent;
+}
+nav .nav-element a:hover,  nav .nav-element a:hover{
+    font-weight: 500;
+    user-select: none;
+}
+
 
 /* message */
 
@@ -85,13 +121,14 @@ header h1 {
 /* image holder */
 
 .image-holder {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .image-holder img {
     height: 200px;
+    max-width: 100%;
     border: 1px solid var(--soft-light-color);
 }
 
@@ -119,14 +156,13 @@ header h1 {
 /* footer */
 
 footer {
-    position: relative;
+    position: absolute;
     width: 100%;
     padding: 20px;
     text-align: center;
     box-sizing: border-box;
     background-color: var(--bg-color);
     bottom: 0px;
-    margin-top: 100px;
 }
 
 footer p{

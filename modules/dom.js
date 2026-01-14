@@ -2,51 +2,24 @@ const root = document.documentElement;
 const themeToggler = document.querySelector("#themeToggler");
 const themeMeta = document.querySelector("#themeMeta");
 
+const navBar = document.querySelector('#navBar');
+const menuBtn = document.querySelector('#menuBtn');
+
 const imageInputBtn = document.querySelector("#imageUploadBtn");
 const uploadedImg = document.querySelector("#uploaded-image");
 
-let savedTheme = localStorage.getItem("theme");
+// menu
 
-if (savedTheme) {
-  if (savedTheme === "dark") {
-    root.classList.toggle("dark");
-    if (root.classList.contains("dark")) {
-      themeMeta.setAttribute("content", "#212121");
-      themeToggler.setAttribute("class", "lucide lucide-sun-icon lucide-sun");
-      themeToggler.innerHTML = `<circle cx="12" cy="12" r="4" />
-  <path d="M12 2v2" />
-  <path d="M12 20v2" />
-  <path d="m4.93 4.93 1.41 1.41" />
-  <path d="m17.66 17.66 1.41 1.41" />
-  <path d="M2 12h2" />
-  <path d="M20 12h2" />
-  <path d="m6.34 17.66-1.41 1.41" />
-  <path d="m19.07 4.93-1.41 1.41" />`;
-      console.log("theme toggled");
-    }
+menuBtn.addEventListener('click', () => {
+  if(navBar.style.display === 'block') {
+    navBar.style.display = 'none'
+  } else {
+    navBar.style.display = 'block';
   }
-}
-
-imageInputBtn.addEventListener("click", () => {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = "image/*";
-
-  input.onchange = (event) => {
-    const file = event.target.files[0];
-    if (!file) {
-      console.error("No file selected!");
-      return;
-    }
-
-    console.log("Selected file : ", file);
-
-    const imageURL = URL.createObjectURL(file);
-    uploadedImg.innerHTML = `<img src ="${imageURL}"/>`;
-  };
-
-  input.click();
 });
+
+
+// theme
 
 themeToggler.addEventListener("click", () => {
   console.log("theme toggled");
@@ -74,3 +47,50 @@ themeToggler.addEventListener("click", () => {
     console.log("theme toggled");
   }
 });
+
+let savedTheme = localStorage.getItem("theme");
+
+if (savedTheme) {
+  if (savedTheme === "dark") {
+    root.classList.toggle("dark");
+    if (root.classList.contains("dark")) {
+      themeMeta.setAttribute("content", "#212121");
+      themeToggler.setAttribute("class", "lucide lucide-sun-icon lucide-sun");
+      themeToggler.innerHTML = `<circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />`;
+      console.log("theme toggled");
+    }
+  }
+}
+
+
+// image upload
+
+imageInputBtn.addEventListener("click", () => {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = "image/*";
+
+  input.onchange = (event) => {
+    const file = event.target.files[0];
+    if (!file) {
+      console.error("No file selected!");
+      return;
+    }
+
+    console.log("Selected file : ", file);
+
+    const imageURL = URL.createObjectURL(file);
+    uploadedImg.innerHTML = `<img src ="${imageURL}"/>`;
+  };
+
+  input.click();
+});
+
